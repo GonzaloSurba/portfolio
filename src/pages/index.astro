@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+
+import { hero, estudios, conocimientos, experiencia, proyectos, contacto } from '@content';
+
+import "../styles/global.css";
+import Experience from '../components/Experience.astro';
+import Contact from '../components/Contact.astro';
+import Project from '../components/Project.astro';
+---
+
+<Layout>
+	<Hero hero={hero} />
+	<About estudios={estudios} conocimientos={conocimientos} />
+	<Experience experiencia={experiencia} />
+	<Project proyectos={proyectos}/>
+	<Contact contacto={contacto} />
+</Layout>

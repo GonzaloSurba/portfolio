@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme inline {
+    --font-sans: var(--font-be-vietnam-pro);
+    --font-serif: var(--font-gabarito);
+
+    --color-primary: #2563eb;
+    --color-neutral: #94a3b8;
+    --color-white: #e2e8f0;
+    --color-black: #0e141b;
+    --color-card-background: #1c232d;
+
+    --text-xs: 0.875rem;
+    --text-xs--line-height: 1.125rem;
+    --text-sm: 1rem;
+    --text-sm--line-height: 1.25rem;
+    --text-base: 1.125rem;
+    --text-base--line-height: 1.625rem;
+    --text-lg: 1.25rem;
+    --text-lg--line-height: 1.75rem;
+    --text-xl: 1.5rem;
+    --text-xl--line-height: 1.813rem;
+    --text-2xl: 1.75rem;
+    --text-2xl--line-height: 2.125rem;
+    --text-3xl: 2rem;
+    --text-3xl--line-height: 2.375rem;
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: 2.688rem;
+    --text-5xl: 2.5rem;
+    --text-5xl--line-height: 3rem;
+    --text-6xl: 3rem;
+    --text-6xl--line-height: 3.625rem;
+    --text-7xl: 3.75rem;
+    --text-7xl--line-height: 1;
+    --text-8xl: 4.5rem;
+    --text-8xl--line-height: 4.875rem;
+    --text-9xl: 6rem;
+    --text-9xl--line-height: 6.625rem;
+
+    --tracking-tightest: -2px;
+    --tracking-tighter: -1px;
+    --tracking-tight: -0.25px;
+
+    --animate-slide-in: slide-in 600ms ease both;
+
+    @keyframes slide-in {
+        10% {
+            transform: translateY(-100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    /* Animación del background */
+    /* Creamos 3 capas de puntos pequeños usando gradientes radiales */
+    background-image:
+        radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+        radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px),
+        radial-gradient(rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px);
+
+    /* Tamaño de la cuadrícula repetida para cada capa */
+    background-size:
+        60px 60px,
+        90px 90px,
+        120px 120px;
+
+    /* Posición inicial de cada capa para que no se alineen */
+    background-position:
+        0 0,
+        30px 15px,
+        60px 45px;
+
+    /* Aplicamos la animación suave en bucle infinito */
+    animation: moverPuntos 20s linear infinite alternate;
+}
+
+/* Animación del movimiento sutil */
+@keyframes moverPuntos {
+    0% {
+        background-position:
+            0px 0px,
+            30px 15px,
+            60px 45px;
+    }
+
+    100% {
+        background-position:
+            30px 50px,
+            -40px 60px,
+            100px -30px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

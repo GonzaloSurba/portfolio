@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import type { ProjectProps } from "@types";
+
+interface Props {
+  proyectos: ProjectProps[];
+}
+
+const { proyectos } = Astro.props;
+---
+
+<section class="scroll-mt-32 mb-24" id="proyectos">
+  <h2
+    class="mb-14 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl"
+  >
+    Mis proyectos
+  </h2>
+  {
+    proyectos.map(({ nombre, resumen, imagen, linkWeb, linkCodigo }, index) => {
+      const STICKY_TOP_BASE = 90;
+      const STICKY_TOP_STEP = 40;
+      const top = STICKY_TOP_BASE + index * STICKY_TOP_STEP;
+      return (
+        <div
+          style={`top: ${top}px;`}
+          class="sticky mb-6 rounded-2xl border border-neutral/20 bg-black md:w-2/3 m-auto hover:border-primary/40"
+        >
+          <div class="bg-card-background/85 relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
+            <div class="px-6 pt-12">
+              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+                {nombre}
+              </h3>
+              <p class="text-base text-neutral">{resumen}</p>
+              <div class="flex gap-5 pt-10 text-white">
+                <a
+                  href={linkCodigo}
+                  target="_blank"
+                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
+                  rel="noopener noreferrer"
+                >
+                  Código
+                </a>
+                <a
+                  href={linkWeb}
+                  target="_blank"
+                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
+                  rel="noopener noreferrer"
+                >
+                  Web
+                </a>
+              </div>
+            </div>
+            <div class="flex items-end justify-end overflow-hidden">
+              <Image
+                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-top-left sm:h-[85%] sm:w-full"
+                src={imagen}
+                alt={nombre}
+                width="736"
+                height="483"
+              />
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
+</section>
