@@ -131,8 +131,8 @@ export const proyectos: ProjectProps[] = [
         nombre: "Mi portfolio",
         resumen: "Portfolio realizado con Astro.",
         imagen: PortfolioPreview,
-        linkWeb: "https://extremadurastats.es/",
-        linkCodigo: "https://github.com/GonzaloSurba/estadisticas-cdextremadura-web"
+        linkWeb: "https://gonzalosurba.github.io/portfolio/",
+        linkCodigo: "https://github.com/GonzaloSurba/portfolio"
     }
 ]
 
