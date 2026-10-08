@@ -19,6 +19,7 @@ import WordPressLogo from "../assets/logos/WordPress.svg";
 
 import ExtremaduraStatsPreview from "../assets/extremadurastats.png";
 import PortfolioPreview from "../assets/portfolio.png";
+import WeatherAppPreview from "../assets/weatherapp.png";
 
 export const navLinks: NavLink[] = [
     { text: "Inicio", href: "#top" },
@@ -133,6 +134,13 @@ export const proyectos: ProjectProps[] = [
         imagen: PortfolioPreview,
         linkWeb: "https://gonzalosurba.github.io/portfolio/",
         linkCodigo: "https://github.com/GonzaloSurba/portfolio"
+    },
+    {
+        nombre: "WeatherApp",
+        resumen: "Web del tiempo realizada con HTML, CSS, JavaScript vanilla y PHP.",
+        imagen: WeatherAppPreview,
+        linkWeb: "https://eltiempo.infinityfreeapp.com/",
+        linkCodigo: "https://github.com/GonzaloSurba/ForecastWeb"
     }
 ]
 
